@@ -1,3 +1,3 @@
-<h2><%= @article.title %></h2>
+<h2><%= Kramdown::Document.new(@article.title).to_html.html_safe %></h2>
 <p><%= Kramdown::Document.new(@article.content).to_html.html_safe %></p>
 <%= link_to "Go back to articles", articles_path %>
